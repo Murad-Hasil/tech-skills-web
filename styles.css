@@ -1,0 +1,941 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+html,
+body {
+  background-color: #fff;
+  color: #000;
+  scroll-behavior: smooth;
+}
+
+/* Navigation bar */
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: #6495ed;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  position: fixed;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 5px 3px 3px #000;
+  cursor: context-menu;
+}
+
+.logo span {
+  color: orangered;
+}
+
+/* Navigation links */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 0 20px;
+}
+
+/* Navigation button & fonts */
+nav ul li button {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #000;
+  box-shadow: 2px 2px 2px #333;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect on buttons */
+nav ul li button:hover {
+  background-color: orangered;
+}
+
+/* Active button of home */
+nav ul li button.active {
+  background-color: orangered;
+  text-decoration: underline;
+}
+
+/* Active effect on buttons */
+nav ul li button:active {
+  opacity: 0.3;
+}
+
+/* Nav buttons */
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Login button */
+.login-button {
+  width: 100%;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 0 0 0 25px;
+  background-color: orangered;
+  box-shadow: 2px 2px 2px #333;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Hover effect */
+.login-button:hover {
+  background-color: rgba(255, 68, 0, 0.785);
+}
+
+.login-button:active {
+  opacity: 0.5;
+}
+
+/* Signup button */
+.signup-button {
+  width: 100%;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 0 25px 0 0;
+  background-color: orangered;
+  box-shadow: 2px 2px 2px #333;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  transition: background-color 200ms;
+}
+
+/* Hover effect */
+.signup-button:hover {
+  background-color: rgba(255, 68, 0, 0.785);
+}
+
+.signup-button:active {
+  opacity: 0.5;
+}
+
+/* Menu icon */
+.menu-icon {
+  font-size: 1.5rem;
+  color: #fff;
+  display: none;
+}
+
+/* Responsive styles for navigation bar */
+@media (max-width: 1095px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul.show {
+    width: 100%;
+    height: unset;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    top: 80px;
+    position: fixed;
+    padding: 20px 0;
+    gap: 30px 0;
+  }
+
+  nav ul li {
+    width: auto;
+    text-align: center;
+  }
+
+  nav ul li button {
+    font-size: 15px;
+    width: auto;
+    padding: 10px 20px;
+  }
+}
+
+/* ----------------------------------------------- Hero styles ----------------------------------------------- */
+.hero {
+  background-image: url(./Images/BG-Wallpaper.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+}
+
+/* Hero content */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 70px;
+  gap: 20px 0;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-shadow: 3px 3px 3px #333;
+}
+
+.hero-content p {
+  font-size: 1.125rem;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+/* Hero buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0 20px;
+}
+
+/* Learn more button */
+.learnmore-button {
+  width: 100%;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000;
+  box-shadow: 2px 2px 3px #333;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 200ms;
+}
+
+/* Hover effect on learn more button */
+.learnmore-button:hover {
+  background-color: #222;
+}
+
+/* Discover courses button */
+.discover-button {
+  width: 100%;
+  padding: 12px 25px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  background-color: transparent;
+  box-shadow: 2px 2px 3px #333;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 200ms;
+}
+
+/* Hover effect on discover courses button */
+.discover-button:hover {
+  background-color: orangered;
+}
+
+/* Responsive design for hero section */
+@media (max-width: 1024px) {
+  .hero-content {
+    padding: 0 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .learnmore-button,
+  .discover-button {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .hero-content {
+    padding: 0 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.875rem;
+    padding: 10px;
+  }
+
+  .learnmore-button,
+  .discover-button {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.75rem;
+    padding: 8px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px 0;
+  }
+
+  .learnmore-button,
+  .discover-button {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    width: 100%;
+    display: block;
+  }
+}
+
+/* ----------------------------------------------- Courses styles ----------------------------------------------- */
+.courses {
+  padding: 80px 0 0 0;
+}
+
+/* Heading */
+.courses-heading {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px #666;
+  text-align: center;
+}
+
+/* Courses container */
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Course card */
+.course-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect on card */
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image */
+.course-card img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Card content */
+.course-card h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #444;
+}
+
+/* Responsive design for courses card */
+@media (max-width: 1024px) {
+  .courses-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .courses-heading {
+    font-size: 1.75rem;
+  }
+
+  .course-card h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-container {
+    grid-template-columns: 1fr;
+  }
+
+  .courses-heading {
+    font-size: 1.5rem;
+  }
+
+  .course-card {
+    padding: 15px;
+  }
+
+  .course-card h3 {
+    font-size: 1rem;
+  }
+
+  .course-card img {
+    height: auto;
+  }
+}
+
+/* ----------------------------------------------- Books styles ----------------------------------------------- */
+.books {
+  padding: 80px 0 0 0;
+}
+
+/* Heading */
+.books-heading {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px #666;
+  text-align: center;
+}
+
+/* Books container */
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Books card */
+.book-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect on card */
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image */
+.book-card img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Card content */
+.book-card h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #444;
+}
+
+/* Card span */
+.book-card span {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive design for books card */
+@media (max-width: 1024px) {
+  .books-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .books-container {
+    grid-template-columns: 1fr;
+  }
+
+  .book-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .books-heading {
+    font-size: 1.75rem;
+  }
+
+  .book-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .book-card span {
+    font-size: 0.875rem;
+  }
+}
+
+/* ----------------------------------------------- About styles ----------------------------------------------- */
+.about {
+  padding: 80px 0 0 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+/* About heading */
+.about-heading {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px #666;
+  text-align: center;
+}
+
+/* About container */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  margin: 20px;
+}
+
+/* About content */
+.about-content {
+  max-width: 600px;
+  flex: 1;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* About image */
+.about-image {
+  max-width: 100%;
+  flex: 1;
+  height: auto;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 3px 2px 2px #444;
+}
+
+/* Responsive design for about section */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content,
+  .about-image {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-heading {
+    font-size: 1.75rem;
+  }
+
+  .about-content p {
+    font-size: 0.875rem;
+  }
+
+  .about-content,
+  .about-image {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-heading {
+    font-size: 1.5rem;
+  }
+
+  .about-content p {
+    font-size: 0.75rem;
+  }
+
+  .about-content,
+  .about-image {
+    padding: 0 5px;
+  }
+}
+
+/* ----------------------------------------------- Contact styles ----------------------------------------------- */
+.contact {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+/* Heading */
+.contact-heading {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px #666;
+}
+
+/* Subheading */
+.contact-subheading {
+  font-size: 1.25rem;
+  color: #666;
+  font-weight: 600;
+  margin: 40px 0;
+}
+
+/* Contact container */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 80px;
+}
+
+/* Contact information & contact form styles */
+.contact-info,
+.contact-form {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3,
+.contact-form h3 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: #555;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* Form */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Contact form input and textarea */
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 150px;
+}
+
+/* Contact form button */
+.contact-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6495ed;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #5679b7;
+}
+
+/* Responsive design for contact section */
+@media (max-width: 1024px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-heading {
+    font-size: 1.75rem;
+  }
+
+  .contact-subheading {
+    font-size: 1rem;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info p,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 0.875rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 15px;
+  }
+
+  .contact-form button {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-heading {
+    font-size: 1.5rem;
+  }
+
+  .contact-subheading {
+    font-size: 0.875rem;
+    margin: 20px 0;
+  }
+
+  .contact-info h3,
+  .contact-form h3 {
+    font-size: 1.25rem;
+  }
+
+  .contact-info p,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 0.75rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 10px;
+  }
+
+  .contact-form button {
+    padding: 6px 12px;
+  }
+}
+
+/* ----------------------------------------------- Footer styles ----------------------------------------------- */
+footer {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer nav links */
+.footer-links ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Footer social media */
+.footer-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-media h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.footer-media ul {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.footer-media ul a {
+  padding: 15px;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 100px;
+}
+
+.footer-media ul a i {
+  font-size: 1.5rem;
+  color: #000;
+  opacity: 0.9;
+}
+
+.footer-media a:hover {
+  background-color: #333;
+  transition: 0.5s;
+}
+
+.footer-media a:hover i {
+  color: white;
+  transition: 0.5s;
+}
+
+ /* Footer bottom */
+.footer-bottom {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .footer-links ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-media ul {
+    flex-direction: row;
+  }
+
+  .footer-media ul a {
+    margin: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 30px 15px;
+  }
+
+  .footer-links ul {
+    gap: 10px;
+  }
+
+  .footer-links ul li a {
+    font-size: 0.875rem;
+  }
+
+  .footer-media h3 {
+    font-size: 1.25rem;
+  }
+
+  .footer-media ul a i {
+    font-size: 1.25rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.875rem;
+  }
+}
